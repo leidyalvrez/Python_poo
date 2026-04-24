@@ -89,3 +89,94 @@ if __name__ == main():
 """
 
 ![Objeto RAM](img/RAM.jpeg "Objeto RAM")
+
+## Compocision 
+
+- consiste en la creacion de nuevas clases a partir de otras clases ya existentes que actuan como elementos compositores de la nueva. 
+- Las clases existentes seran atributos de la nueva clase 
+
+### Ejemplo 
+
+- Una cordenada en dos dimensiones esta compuesta por dos valores, el valor del eje de las x y el valor en el eje de las y. Esto podria ser una clase. 
+- Un cuadrado esta compuesto por cuatro cordenadas que son los cuatro vertices. Esto podria ser una clase que esta compuesta por cuatro clases del objeto cordenada. 
+
+### Codigo python 
+```python 
+class cordenada: 
+    # Metodo constructor 
+    def__init__(self, x, y):
+       self.x = x 
+       sels.y = y 
+
+    def mostrarCordenada(sels): 
+        print("(",self.x,",", self.y," )")
+
+class cuadrado: 
+    # Metodo constructor 
+    def__init__(self, v1, v2, v3, v4):
+       self.v1 = v1  
+       self.v2 = v2
+       self.v3 = v3
+       self.v4 = v4
+    
+    def mostrarVertices(self):
+        print("El cuadrado esta compuesto por los siguientes vertices")
+        self.v1mostrarCordenada()
+        self.v2mostrarCordenada()
+        self.v3mostrarCordenada()
+        self.v4mostrarCordenada()
+```
+### Encapsulacion
+
+- Uno de los objetivos que tiene la (POO) es protejer los datos de acceso o usos no controlados y esto es lo que se conoce como *encapsulacion* 
+- Los datos (atributos) que componene una clase pueden ser de dos tipos:
+    - **publicos:** los datos son accesibles sin control, es decir, los datos pueden ser usados sin ningun tipo de mecanismo que proteja ante usos no autorizados o indevidos.
+    - **privados:** los datos no pueden ser accedidos sin control y para acceder a ellos. De esta manera, los datos unicamente seran accedidos ditrectamente por la propia clase.
+- La encapsulacion puede realizarce sobre los metodos.
+- La definicion de atributos privados se realiza incluyendo los caracteres "__" (dos quiones de piso) entre la palabra *self* y el nombre del atributo 
+
+### Ejemlo 
+
+### Codigo python 
+```python 
+class cordenada: 
+    # Metodo constructor 
+    def__init__(self, x, y):
+       self.x = x 
+       sels.y = y 
+    # Metodo de accseso 
+    def getX(self):
+        return self.__x
+    
+    def setX(self, x): 
+        self.__x = x 
+    
+    def getY(self):
+        return self.__Y
+    
+    def setY(self, y ): 
+        self.__Y = y 
+    
+    # Metodo para mostrar la cordenada
+    def mostrarCordenada(self):
+        print("(",self.__x,","self.__y,")")
+
+
+    def mostrarCordenada(sels): 
+        print("(",self.x,",", self.y," )")
+
+class cuadrado: 
+    # Metodo constructor 
+    def__init__(self, v1, v2, v3, v4):
+       self.v1 = v1  
+       self.v2 = v2
+       self.v3 = v3
+       self.v4 = v4
+    
+    def mostrarVertices(self):
+        print("El cuadrado esta compuesto por los siguientes vertices")
+        self.v1mostrarCordenada()
+        self.v2mostrarCordenada()
+        self.v3mostrarCordenada()
+        self.v4mostrarCordenada()
+```
